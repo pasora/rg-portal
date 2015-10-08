@@ -3,11 +3,9 @@ class Comment < ActiveRecord::Base
   include MarkdownRender
 
   belongs_to :user
-  belongs_to :page
+  validates :content, presence: true
 
   after_save :notify_mentions
-
-  validates :content, presence: true
 
   MENTION_USER_REGEX = /@[A-z0-9]+/
 

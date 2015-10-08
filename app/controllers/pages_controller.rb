@@ -33,7 +33,7 @@ class PagesController < ApplicationController
   private
 
   def set_new_comment
-    @comment = Comment.new(page: @page) if @page.present?
+    @comment = PageComment.new(page: @page) if @page.present?
   end
 
   def page_params

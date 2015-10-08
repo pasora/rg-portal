@@ -12,7 +12,7 @@
           .nickname= comment.user.nickname
         .content= raw comment.render_content
 
-  = form_for Comment.new(page: page) do |f|
+  = form_for PageComment.new(page: page) do |f|
     = f.hidden_field :page_id
     .comment
       .user
